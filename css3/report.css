@@ -1,0 +1,30 @@
+.reportContainer
+{
+    background-color:#10111d; 
+    text-align:center;
+}
+
+.mostWantedContainer,.missingPeopleContainer
+{
+    display:inline-block;
+    width:1000px; 
+    background-color:#9e6f99; 
+    text-align:center;
+}
+
+.mostWantedContainer h2,.missingPeopleContainer h2
+{
+    color:rgb(231, 238, 240);
+}
+
+.mostWantedContainer .card,.missingPeopleContainer .card
+{
+    display:inline-block; text-align:left; max-width: 700px;
+}
+
+.active-cyan-3 #searchBar
+{
+    display:inline-block;  
+    width: 800px;
+    margin-top:100px;
+}
