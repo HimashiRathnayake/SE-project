@@ -1,5 +1,4 @@
 <?php
-$_SESSION["email"] = "";
 if (isset($_SESSION["email"])) { ?>
 
     <div class="limiter">
@@ -54,7 +53,7 @@ if (isset($_SESSION["email"])) { ?>
     </html>
 <?php
 } else {
-    echo "Please Sign Up";
+    echo "Please Sign In";
 }
 
 ?>

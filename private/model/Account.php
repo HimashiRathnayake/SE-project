@@ -1,11 +1,12 @@
 <?php
-require_once DB.php;
-DB::connectDatbase();
-class Account extends model{
+require_once "../private/DB.php";
+
+class Account{
    private static $firstName;
    private static  $lastName;
    private static $NIC;
-   private static $hashedPassword;
+   
+   
     
    // Common methods for police,public 
    public static function getFirstName($email){
@@ -34,13 +35,14 @@ class Account extends model{
     return $this->NIC;
     
     }
-    public static function getHashedPassword($email){
+    public static function getHashedPassword($email,$table){
         //db logic
-    $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $this->conn->prepare("SELECT hashedPassword from $this->table where email=$email");
+    $conn=DB::connectDatabase();
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT hashedPassword from ".$table." where email='".$email."'");
     $stmt->execute();
-    $this->hashedPassword = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    return $this->hashedPassword;
+    $hashedPassword = $stmt->fetch();
+    return $hashedPassword["hashedPassword"];
     }
     //TODO return hashed password
     public static function setLastName(){
@@ -56,15 +58,18 @@ class Account extends model{
     public static function setEmail(){
         //db logic
     }
-    public static function addNewAccount($firstname,$lastname,$email,$hashedPassword,$NIC,$telNo){
-    $stmt = $this->conn->prepare("INSERT INTO $this->table (firstname, lastname, email,hashedPassword,) VALUES (:firstname, :lastname, :email,:hashedPassword,:NIC,:telNol)");
-    $stmt->bindParam(':firstname', $firstname);
-    $stmt->bindParam(':lastname', $lastname);
+    public static function addNewAccount($name,$email,$hashedPassword,$NIC,$telNo,$postalCode,$address,$table){
+    $conn=DB::connectDatabase();
+    $stmt = $conn->prepare("INSERT INTO ".$table."(name ,email,hashedPassword,NIC,telNo,postalCode,address) VALUES (:name,:email,:hashedPassword,:NIC,:telNo,:postalCode,:address)");
+    $stmt->bindParam(':name', $name);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':hashedPassword', $hashedPassword);
     $stmt->bindParam(':NIC', $NIC);
     $stmt->bindParam(':telNo', $telNo);
+    $stmt->bindParam(':postalCode', $postalCode);
+    $stmt->bindParam(':address', $address);
     $stmt->execute();
+    
     }
     
     

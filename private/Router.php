@@ -17,7 +17,9 @@ class Router{
          $cmp=Self::uriProcess($uri);
          $cmp=array_chunk($cmp,3);
          $this->controller=$cmp[1][0];
-         $this->method=$cmp[1][1];
+         if (count($cmp[1])>1){
+            $this->method=$cmp[1][1];
+         }
          $this->parameters=[];
          if (count($cmp[1])>2){
             $this->parameters=array_chunk($cmp[1],2)[1];

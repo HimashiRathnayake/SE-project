@@ -1,97 +1,76 @@
 <?php
 
-//$_SESSION["email"] = "";
+
 if (isset($_SESSION["email"])) { ?>
+<br>
+<br>
+<br>
+<br>
+<br>
+	<div class="container" >    
+            
+		<div id="signupbox" style=" margin-top:50px"  class="mainbox col-md-12 col-md-offset-0 col-sm-6 col-sm-offset-6" >
+			<div class="panel panel-info" style="background-color: #cab2c7">
+				<div class="panel-heading" style="background-color: #9e6f99" >
+					<div class="panel-title" style="color:white">Police Station Registration</div>
+				</div>  
+				<div class="panel-body" >
+					<form method="post" action="<?php echo SITE_URL_BASE."/PoliceStationRegister/addNewPoliceStation"?>">
+						
+						<div id="div_id_date" class="form-group required"> 
+							<label for="id_date" class="control-label col-md-4  requiredField"> Police Station Name<span class="asteriskField">*</span> </label>
+							<div class="controls col-md-8 "> 
+								<input class="input-md textinput textInput form-control"  name="name" placeholder="Enter police station name" required="required" style="margin-bottom: 10px" type="text" />
+							</div>
+						</div> 
+						<div id="div_id_postalCode" class="form-group required">
+							<label for="id_postalCode" class="control-label col-md-4  requiredField"> PostalCode<span class="asteriskField">*</span> </label>
+							<div class="controls col-md-8 ">
+								<input class="input-md textinput textInput form-control"  name="postalcode" placeholder="Enter Police Station PostalCode" required="required" style="margin-bottom: 10px" type="text" />
+							</div> 
+						</div>
+						
+						<div id="div_id_email" class="form-group required">
+							<label for="id_email" class="control-label col-md-4  requiredField"> E-mail<span class="asteriskField">*</span> </label>
+							<div class="controls col-md-8 ">
+								<input class="input-md emailinput form-control" id="id_email" name="email" placeholder="Enter Police Station Email" style="margin-bottom: 10px" type="email" />
+							</div>     
+						</div>
+						<div id="div_id_postalCode" class="form-group required"  data-validate=" telephone number is required">
+							<label for="id_postalCode" class="control-label col-md-4  requiredField"> Telephone Number<span class="asteriskField">*</span> </label>
+							<div class="controls col-md-8 ">
+								<input class="input-md textinput textInput form-control"  name="telno" placeholder="Enter Police station Telephone Number" style="margin-bottom: 10px" type="text" />
+							</div> 
+						</div> 
+						<div id="div_id_password" class="form-group required"  data-validate=" password is required">
+							<label for="id_password" class="control-label col-md-4  requiredField">Password<span class="asteriskField">*</span> </label>
+							<div class="controls col-md-8 ">
+								<input class="input-md textinput textInput form-control"  name="password" placeholder="Enter Police station Telephone Number" style="margin-bottom: 10px" type="text" />
+							</div> 
+						</div>                               
+						<div class="form-group">
+							<input class="btn btn-primary btn-lg btn-block" style="width:200px; margin-left:auto;margin-right:auto"  type="submit" name="create" id="register" value="Submit" >
+						</div>        
+                            
+                    </form>
 
-<div class="container-contact100">
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" method="post"  id="submit" action="<?php echo SITE_URL_BASE."/PoliceStationRegister/addNewPoliceStation"?>">
-				<span class="contact100-form-title">
-					Police Station Register Form
-				</span>
-
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Police Station Name</span>
-					<input class="input100" type="text" name="name" placeholder="Enter police station name">
-					<span class="focus-input100"></span>
+                
 				</div>
-                <div class="wrap-input100 validate-input" data-validate=" postalcode is required">
-					<span class="label-input100">PostalCode</span>
-					<input class="input100" type="text" name="postalcode" placeholder="Enter police station postalcode">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Email</span>
-					<input class="input100" type="text" name="email" placeholder="Enter police station email addess">
-					<span class="focus-input100"></span>
-				</div>
-                <div class="wrap-input100 validate-input" data-validate=" telephone number is required">
-					<span class="label-input100">Telephone Number</span>
-					<input class="input100" type="text" name="telno" placeholder="Enter police station telephonenumber">
-					<span class="focus-input100"></span>
-				</div>
-				
-			
-				<div class="container-contact100-form-btn">
-					<div class="wrap-contact100-form-btn">
-						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn" onclick="submit()">
-							<span>
-								Submit
-								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-							</span>
-						</button>
-					</div>
-				</div>
-			</form>
-		</div>
+			</div>
+		</div> 
 	</div>
-
-
-
-	<div id="dropDownSelect1"></div>
-
-<!--===============================================================================================-->
-	<script src="../3rdParty/vendor2/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../3rdParty/vendor2/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../3rdParty/vendor2/bootstrap/js/popper.js"></script>
-	<script src="../3rdParty/vendor2/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../3rdParty/vendor2/select2/select2.min.js"></script>
-	<script>
-		$(".selection-2").select2({
-			minimumResultsForSearch: 20,
-			dropdownParent: $('#dropDownSelect1')
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="../3rdParty/vendor2/daterangepicker/moment.min.js"></script>
-	<script src="../3rdParty/vendor2/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="../3rdParty/vendor2/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="../3rdParty/js2/main.js"></script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23581568-13');
-  function submit(){
-    document.getElementById("submit").submit();
-  }
-</script>
+    
 
 </body>
+  
+	<script src="../3rdParty/vendor3/jquery/jquery.min.js"></script>
+	<script src="../3rdParty/js3/addcomplain.js"></script>
+  
 </html>
+
 <?php
 } else {
-    echo "Please Sign Up";
+    echo "Please Sign In";
 }
 
 ?>

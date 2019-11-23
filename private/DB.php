@@ -11,7 +11,7 @@ public static function connectDatabase(){
 try{
     $conn = new PDO("mysql:host=".$serverName.";"."dbname=".$dataBase, $userName, $password);
     return $conn;
-    echo "Connected successfully";
+    
    
 }
 catch(PDOException $e){
