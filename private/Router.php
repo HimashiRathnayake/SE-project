@@ -27,7 +27,7 @@ class Router{
         call_user_func_array([$this->controller.'Controller', $this->method],$this->parameters);
     }
     public function getTitle(){
-        return $this->method;
+        return $this->controller;
     }
 }
 //TODO improve
