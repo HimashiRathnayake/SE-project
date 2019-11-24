@@ -24,7 +24,6 @@ class Router{
          if (count($cmp[1])>2){
             $this->parameters=array_chunk($cmp[1],2)[1];
         }
-        echo $this->controller;
         call_user_func_array([$this->controller.'Controller', $this->method],$this->parameters);
     }
     public function getTitle(){
