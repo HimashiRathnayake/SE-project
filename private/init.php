@@ -38,19 +38,19 @@ $Router=new Router();
             <a class="nav-link js-scroll-trigger" href="http://crimedetectionapp.herokuapp.com/public/home/index">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="http://localhost/crimereportSystem/public/About/index">About</a>
+            <a class="nav-link js-scroll-trigger" href="http://crimedetectionapp.herokuapp.com/public/About/index">About</a>
           </li>
       <li class="nav-item">
-			<a class="nav-link js-scroll-trigger" href="http://localhost/crimereportSystem/public/Services/index">Services</a>
+			<a class="nav-link js-scroll-trigger" href="http://crimedetectionapp.herokuapp.com/public/Services/index">Services</a>
 			</li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="http://localhost/crimereportSystem/public/contact/index">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="http://crimedetectionapp.herokuapp.com/public/contact/index">Contact</a>
           </li>
 		  <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="http://localhost/crimereportSystem/public/Login/index">LogIn</a>
+            <a class="nav-link js-scroll-trigger" href="http://crimedetectionapp.herokuapp.com/public/Login/index">LogIn</a>
           </li>
 		  <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="http://localhost/crimereportSystem/public/Signup/index">Register</a>
+            <a class="nav-link js-scroll-trigger" href="http://crimedetectionapp.herokuapp.com/public/Signup/index">Register</a>
           </li>
         </ul>
       </div>
