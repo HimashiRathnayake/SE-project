@@ -35,7 +35,7 @@ $Router=new Router();
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="http://localhost/crimereportSystem/public/home/index">Home</a>
+            <a class="nav-link js-scroll-trigger" href="http://crimedetectionapp.herokuapp.com/public/home/index">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="http://localhost/crimereportSystem/public/About/index">About</a>
