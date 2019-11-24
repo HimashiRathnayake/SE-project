@@ -3,7 +3,6 @@ class Router{
     private $controller;
     private $method;
     private $parameters;
-    private $out;
     function __construct(){
         
     }
@@ -17,10 +16,9 @@ class Router{
     public function respond($uri){
          $cmp=Self::uriProcess($uri);
          $cmp=array_chunk($cmp,3);
-         $this->controller=$cmp[1][0];
-         $this->out=$cmp[0][1].$cmp[1][0].$cmp[0][2];
+         $this->controller=$cmp[0][2];
          if (count($cmp[1])>1){
-            $this->method=$cmp[1][1];
+            $this->method=$cmp[1][0];
          }
          $this->parameters=[];
          if (count($cmp[1])>2){
@@ -29,7 +27,7 @@ class Router{
         call_user_func_array([$this->controller.'Controller', $this->method],$this->parameters);
     }
     public function getTitle(){
-        return $this->out;
+        return $this->controller;
     }
 }
 //TODO improve
