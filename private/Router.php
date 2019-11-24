@@ -16,10 +16,10 @@ class Router{
     public function respond($uri){
          $cmp=Self::uriProcess($uri);
          $cmp=array_chunk($cmp,3);
-         $this->controller=$cmp[0][2].$cmp[1][0];
-         if (count($cmp[1])>1){
-            $this->method=$cmp[1][0];
-         }
+         $this->controller=$cmp[0][2];
+ 
+         $this->method=$cmp[1][0];
+         
          $this->parameters=[];
          if (count($cmp[1])>2){
             $this->parameters=array_chunk($cmp[1],2)[1];
