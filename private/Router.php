@@ -3,6 +3,7 @@ class Router{
     private $controller;
     private $method;
     private $parameters;
+    private $cmp;
     function __construct(){
         
     }
@@ -15,7 +16,7 @@ class Router{
     //TODO whitspace added 
     public function respond($uri){
          $cmp=Self::uriProcess($uri);
-         $cmp=array_chunk($cmp,3);
+         $this->cmp=array_chunk($cmp,3);
          $this->controller=$cmp[1][0];
          if (count($cmp[1])>1){
             $this->method=$cmp[1][1];
